@@ -45,7 +45,7 @@ metadata:
     alb.ingress.kubernetes.io/load-balancer-attributes: idle_timeout.timeout_seconds=60
 
     # ALB가 여러 포트를 관리할 때 필요한 설정
-    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTP": 8000}]'
+    # alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTP": 8000}]'
 spec:
   rules:
     - http:
