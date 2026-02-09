@@ -42,7 +42,7 @@ jobs:
           docker push $ECR_REGISTRY/jiwon/nginx:$IMAGE_TAG
           docker push $ECR_REGISTRY/jiwon/nginx:latest
 
-          docker tag $ECR_REGISTRY/jiwon/nginx:$IMAGE_TAG $ECR_REGISTRY/csjin/nginx:latest
+          docker tag $ECR_REGISTRY/jiwon/nginx:$IMAGE_TAG $ECR_REGISTRY/jiwon/nginx:latest
           docker push $ECR_REGISTRY/jiwon/nginx:latest
 
       - name: Build & Push FastAPI
@@ -54,7 +54,7 @@ jobs:
           docker push $ECR_REGISTRY/jiwon/fastapi:$IMAGE_TAG
 
           # latest 태그도 같이 푸시 (ArgoCD 연결 전 테스트용)
-          docker tag $ECR_REGISTRY/jiwon/fastapi:$IMAGE_TAG $ECR_REGISTRY/csjin/fastapi:latest
+          docker tag $ECR_REGISTRY/jiwon/fastapi:$IMAGE_TAG $ECR_REGISTRY/jiwon/fastapi:latest
           docker push $ECR_REGISTRY/jiwon/fastapi:latest
 
       # ==========================================================
