@@ -35,8 +35,12 @@ jobs:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          docker build -t $ECR_REGISTRY/jiwon/nginx:$IMAGE_TAG ./nginx
+          docker build \
+          -t $ECR_REGISTRY/jiwon/nginx:$IMAGE_TAG \
+          -t $ECR_REGISTRY/jiwon/nginx:latest ./nginx
+
           docker push $ECR_REGISTRY/jiwon/nginx:$IMAGE_TAG
+          docker push $ECR_REGISTRY/jiwon/nginx:latest
 
           # docker tag $ECR_REGISTRY/csjin/nginx:$IMAGE_TAG $ECR_REGISTRY/csjin/nginx:latest
           # docker push $ECR_REGISTRY/csjin/nginx:latest
